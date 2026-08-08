@@ -1,0 +1,6 @@
+.git
+.ai-workspace
+node_modules
+javascript
+docker-images
+*.s9pk
