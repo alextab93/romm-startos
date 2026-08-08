@@ -17,7 +17,9 @@ RomM works without external metadata credentials, but enrichment is limited. Run
 
 ## Importing ROMs
 
-Place files in the library using the folder layout documented for RomM 3.5.0, then start a scan from the RomM web interface. Test with a small library before copying a large collection.
+Place files in the library using the folder layout documented for RomM 5.1.0, then start a scan from the RomM web interface. Test with a small library before copying a large collection.
+
+RomM 5.1.0 may use hardlinks between its library and asset directories. Keep all RomM application data in the package-managed storage; do not replace individual `/romm` subdirectories with unrelated external filesystems.
 
 If you experimented with the abandoned StartOS 0.3 wrapper, do not copy its database, `.env`, Redis data, or backup. Copy only ROM files into a clean installation and let RomM rebuild its metadata.
 

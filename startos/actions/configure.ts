@@ -39,7 +39,7 @@ export const configure = sdk.Action.withInput(
   async () => ({
     name: i18n('Configure Metadata Providers'),
     description: i18n(
-      'Save optional API credentials supported by RomM 3.5.0.',
+      'Save optional API credentials supported by RomM 5.1.0.',
     ),
     warning: i18n(
       'Saved values are passed to RomM after the service is restarted. Leave a field blank to remove it.',

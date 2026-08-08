@@ -15,14 +15,15 @@ export const manifest = setupManifest({
     romm: {
       source: {
         dockerTag:
-          'rommapp/romm:3.5.0@sha256:9ff83725e98e5dfc0b871cb88ca378c539fad66b7afcbe6aad562d2b84d5b802',
+          'rommapp/romm:5.1.0@sha256:ce9d86ab531e09fede45d00f426e3bf2d1f5dd14846f94d6360d77a92a413028',
       },
       arch: ['x86_64', 'aarch64'],
     },
     mariadb: {
       source: {
-        dockerTag:
-          'mariadb:11.4.5@sha256:49117dcc565cf51aa57ac5fca59ab31213402ff0eae6ffc13c46a37b938f7e4b',
+        dockerBuild: {
+          workdir: 'docker-images/mariadb',
+        },
       },
       arch: ['x86_64', 'aarch64'],
     },

@@ -1,13 +1,18 @@
 import { IMPOSSIBLE, VersionInfo } from '@start9labs/start-sdk'
 
 export const current = VersionInfo.of({
-  version: '3.5.0:0',
+  version: '5.1.0:0',
   releaseNotes: {
-    en_US: 'Initial native StartOS 0.4 package for RomM 3.5.0.',
-    es_ES: 'Paquete nativo inicial de StartOS 0.4 para RomM 3.5.0.',
-    de_DE: 'Erstes natives StartOS-0.4-Paket für RomM 3.5.0.',
-    pl_PL: 'Pierwszy natywny pakiet StartOS 0.4 dla RomM 3.5.0.',
-    fr_FR: 'Premier paquet StartOS 0.4 natif pour RomM 3.5.0.',
+    en_US:
+      'Updates RomM to 5.1.0 with the redesigned UI, security fixes, enhanced library scanning, and native support for cross-directory hardlinks.',
+    es_ES:
+      'Actualiza RomM a 5.1.0 con la interfaz rediseñada, correcciones de seguridad, escaneo mejorado y soporte nativo para enlaces físicos entre directorios.',
+    de_DE:
+      'Aktualisiert RomM auf 5.1.0 mit neuer Oberfläche, Sicherheitskorrekturen, verbessertem Bibliotheksscan und nativer Unterstützung für verzeichnisübergreifende Hardlinks.',
+    pl_PL:
+      'Aktualizuje RomM do 5.1.0 z przeprojektowanym interfejsem, poprawkami bezpieczeństwa, ulepszonym skanowaniem i obsługą dowiązań twardych między katalogami.',
+    fr_FR:
+      'Met RomM à jour vers 5.1.0 avec une interface repensée, des correctifs de sécurité, une analyse améliorée et la prise en charge des liens physiques entre répertoires.',
   },
   migrations: {
     up: async () => {},

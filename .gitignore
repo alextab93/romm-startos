@@ -1,6 +1,8 @@
 node_modules/
 javascript/
-docker-images/
 *.s9pk
 *.s9pk.*
 result
+
+.ai-workspace
+.DS_Store

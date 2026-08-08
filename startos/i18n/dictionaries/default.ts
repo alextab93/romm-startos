@@ -18,7 +18,7 @@ const dict = {
   'SteamGridDB API Key': 14,
   'Optional API key used to retrieve SteamGridDB artwork.': 15,
   'Configure Metadata Providers': 16,
-  'Save optional API credentials supported by RomM 3.5.0.': 17,
+  'Save optional API credentials supported by RomM 5.1.0.': 17,
   'Saved values are passed to RomM after the service is restarted. Leave a field blank to remove it.': 18,
   'Configuration Saved': 19,
   'Restart RomM to apply the metadata provider configuration.': 20,

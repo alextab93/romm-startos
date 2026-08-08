@@ -1,12 +1,12 @@
 # RomM for StartOS
 
-This repository packages [RomM](https://github.com/rommapp/romm) 3.5.0 as a native StartOS 0.4 SDK-v2 service.
+This repository packages [RomM](https://github.com/rommapp/romm) 5.1.0 as a native StartOS 0.4 SDK-v2 service.
 
 RomM scans, enriches, browses, and manages a personal game library from a web interface. This package uses the official RomM container and a private MariaDB sidecar. RomM's bundled Redis instance, web server, migrations, watcher, worker, and scheduler are started by the upstream `/init` process.
 
 ## Architecture
 
-- `rommapp/romm:3.5.0` serves the UI on internal port `8080`.
+- `rommapp/romm:5.1.0` serves the UI on internal port `8080`.
 - `mariadb:11.4.5` stores RomM metadata on internal port `3306`.
 - The daemons share the service network namespace; MariaDB listens only inside the package.
 - RomM starts only after the MariaDB health check succeeds.
@@ -15,9 +15,9 @@ RomM scans, enriches, browses, and manages a personal game library from a web in
 
 ## Persistent data
 
-The `main` volume contains `library/`, `resources/`, `assets/`, `config/`, `redis-data/`, and the package's `store.json`. The `database` volume contains MariaDB at `/var/lib/mysql`.
+The entire `main` volume is mounted at `/romm` and contains `library/`, `resources/`, `assets/`, `config/`, `redis-data/`, and the package's `store.json`. Mounting the parent volume is required by RomM 5.1.0 so hardlinks across its application directories remain on one filesystem. The same `redis-data/` subpath is also mounted at `/redis-data`. The `database` volume contains MariaDB at `/var/lib/mysql`.
 
-Internal MariaDB credentials and `ROMM_AUTH_SECRET_KEY` are generated once during a clean install. The Configure Metadata Providers action stores the exact optional variables supported by RomM 3.5.0: `IGDB_CLIENT_ID`, `IGDB_CLIENT_SECRET`, `MOBYGAMES_API_KEY`, and `STEAMGRIDDB_API_KEY`.
+Internal MariaDB credentials and `ROMM_AUTH_SECRET_KEY` are generated once during a clean install. The Configure Metadata Providers action stores supported optional variables: `IGDB_CLIENT_ID`, `IGDB_CLIENT_SECRET`, `MOBYGAMES_API_KEY`, and `STEAMGRIDDB_API_KEY`.
 
 ## Backups
 
@@ -31,7 +31,7 @@ This is a clean rewrite. The abandoned StartOS 0.3 wrapper never formed a suppor
 
 Both images are pinned to immutable multi-architecture OCI indexes:
 
-- `rommapp/romm:3.5.0@sha256:9ff83725e98e5dfc0b871cb88ca378c539fad66b7afcbe6aad562d2b84d5b802`
+- `rommapp/romm:5.1.0@sha256:ce9d86ab531e09fede45d00f426e3bf2d1f5dd14846f94d6360d77a92a413028`
 - `mariadb:11.4.5@sha256:49117dcc565cf51aa57ac5fca59ab31213402ff0eae6ffc13c46a37b938f7e4b`
 
 The verified Linux platforms are `amd64` and `arm64`.

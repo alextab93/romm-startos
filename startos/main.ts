@@ -5,7 +5,8 @@ import {
   databaseName,
   databasePort,
   databaseUser,
-  mainMounts,
+  mainMountpoint,
+  redisMountpoint,
   uiPort,
 } from './utils'
 
@@ -37,32 +38,14 @@ export const main = sdk.setupMain(async ({ effects }) => {
     sdk.Mounts.of()
       .mountVolume({
         volumeId: 'main',
-        subpath: 'library',
-        mountpoint: mainMounts.library,
-        readonly: false,
-      })
-      .mountVolume({
-        volumeId: 'main',
-        subpath: 'resources',
-        mountpoint: mainMounts.resources,
-        readonly: false,
-      })
-      .mountVolume({
-        volumeId: 'main',
-        subpath: 'assets',
-        mountpoint: mainMounts.assets,
-        readonly: false,
-      })
-      .mountVolume({
-        volumeId: 'main',
-        subpath: 'config',
-        mountpoint: mainMounts.config,
+        subpath: null,
+        mountpoint: mainMountpoint,
         readonly: false,
       })
       .mountVolume({
         volumeId: 'main',
         subpath: 'redis-data',
-        mountpoint: mainMounts.redis,
+        mountpoint: redisMountpoint,
         readonly: false,
       }),
     'romm-app-sub',
