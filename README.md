@@ -4,6 +4,12 @@ This repository packages [RomM](https://github.com/rommapp/romm) 5.1.0 as a nati
 
 RomM scans, enriches, browses, and manages a personal game library from a web interface. This package uses the official RomM container and a private MariaDB sidecar. RomM's bundled Redis instance, web server, migrations, watcher, worker, and scheduler are started by the upstream `/init` process.
 
+## Quick start (StartOS)
+
+Install RomM from the start9.tabordalab.com (TabordaLab StartOS registry), or sideload the `.s9pk` package.
+
+<img width="1419" height="527" alt="image" src="https://github.com/user-attachments/assets/38d7f4f6-73e2-4b8d-a855-b00aa41f852f" />
+
 ## Architecture
 
 - `rommapp/romm:5.1.0` serves the UI on internal port `8080`.
