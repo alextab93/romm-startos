@@ -5,7 +5,7 @@ export const manifest = setupManifest({
   id: 'romm',
   title: 'RomM',
   license: 'AGPL-3.0',
-  packageRepo: 'https://github.com/alex/romm-startos',
+  packageRepo: 'https://github.com/alextab93/romm-startos',
   upstreamRepo: 'https://github.com/rommapp/romm',
   marketingUrl: 'https://romm.app/',
   donationUrl: null,
